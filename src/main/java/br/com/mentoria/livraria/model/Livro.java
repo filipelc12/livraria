@@ -1,12 +1,21 @@
 package br.com.mentoria.livraria.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Livro {
 
+    private Long id;
     @NotEmpty
     private String nome;
     private String resumo;
@@ -19,17 +28,6 @@ public class Livro {
     private Categoria categoria;
     private Autor autor;
 
-    public Livro (String nome, String resumo, String sumario, Double preco, Long paginas, String isbn, LocalDate dataEstreia, Categoria categoria, Autor autor) {
-        this.nome = nome;
-        this.resumo = resumo;
-        this.sumario = sumario;
-        this.preco = preco;
-        this.paginas = paginas;
-        this.isbn = isbn;
-        this.dataEstreia = dataEstreia;
-        this.categoria = categoria;
-        this.autor = autor;
-    }
 
     public Livro (String nome, Double preco, LocalDate dataEstreia){
         this.nome = nome;
@@ -37,41 +35,6 @@ public class Livro {
         this.dataEstreia = dataEstreia;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public String getResumo() {
-        return resumo;
-    }
-
-    public String getSumario() {
-        return sumario;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public Long getPaginas() {
-        return paginas;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public LocalDate getDataEstreia() {
-        return dataEstreia;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public Autor getAutor() {
-        return autor;
-    }
 }
 
 

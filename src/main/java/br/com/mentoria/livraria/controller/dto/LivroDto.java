@@ -14,6 +14,7 @@ public class LivroDto {
     private String resumo;
     private Double preco;
     private String autor;
+    private String dataEstreia;
 
     public LivroDto(Livro livro){
         this.id = livro.getId();
@@ -21,6 +22,7 @@ public class LivroDto {
         this.resumo = livro.getResumo();
         this.preco = livro.getPreco();
         this.autor = livro.getAutor().getNome();
+        this.dataEstreia = livro.getDataEstreia().toString();
     }
 
     public static List<LivroDto> converter(List<Livro> livros) {

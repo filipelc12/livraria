@@ -26,10 +26,9 @@ public class Autor {
     private String descricao;
     private LocalDateTime registro = LocalDateTime.now();
 
-    public Autor(String email, String nome, String descricao){
+    public Autor(String email, String nome){
         this.email = email;
         this.nome = nome;
-        this.descricao = descricao;
 
     }
 

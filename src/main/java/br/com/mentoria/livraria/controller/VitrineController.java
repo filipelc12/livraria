@@ -20,7 +20,7 @@ public class VitrineController {
 
     @RequestMapping("/vitrine")
     public List<LivroDto> lista(){
-        Autor autor = new Autor("teste@gmail.com", "TesteAutor");
+        Autor autor = new Autor("teste@gmail.com", "TesteAutor",LocalDate.now(),"teste");
         Categoria categoria = new Categoria(2L, "TesteCategoria");
         Livro livro =  new Livro(1L,"TesteNomeLivro", "Teste resumo", "Teste Sumario", 10.5,450L,"100589945",LocalDate.parse("2021-10-02"),categoria,autor);
 

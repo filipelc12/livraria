@@ -12,12 +12,16 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Vitrine {
 
+
     private Long id;
+
     private List<Livro> livros = new ArrayList<>();
 
     public Vitrine(List<Livro> livros) {
+
         this.livros = livros;
     }
 

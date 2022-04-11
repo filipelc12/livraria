@@ -1,17 +1,17 @@
--- Insert de autores
-INSERT INTO public.autores(
+-- Insert de autor
+INSERT INTO public.autor(
     data_de_criacao, descricao, email, nome)
 VALUES (to_date('10/01/2020','dd/mm/yyyy'), 'Autor de romance', 'cesar_romano@gmail.com', 'Cesar Romano');
-INSERT INTO public.autores(
+INSERT INTO public.autor(
     data_de_criacao, descricao, email, nome)
 VALUES (to_date('05/04/2022','dd/mm/yyyy'), 'Autor de romance', 'bruno_marinho@gmail.com', 'Bruno Marinho');
-INSERT INTO public.autores(
+INSERT INTO public.autor(
     data_de_criacao, descricao, email, nome)
 VALUES (to_date('05/02/2022','dd/mm/yyyy'), 'Autor de drama', 'maria_antonia@gmail.com', 'Maria Antonia Coutinho');
-INSERT INTO public.autores(
+INSERT INTO public.autor(
     data_de_criacao, descricao, email, nome)
 VALUES (to_date('10/05/2015','dd/mm/yyyy'), 'Autor de Livro Infantil', 'julio_gomes@terra.com', 'Julio Gomes Terra');
-INSERT INTO public.autores(
+INSERT INTO public.autor(
     data_de_criacao, descricao, email, nome)
 VALUES (to_date('25/05/2012','dd/mm/yyyy'), 'Autor de quadrinhos', 'ricardo_quaresma@hotmail.com', 'Ricardo Quaresma');
 

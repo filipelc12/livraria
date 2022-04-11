@@ -50,7 +50,7 @@ public class Livro {
     @Column(name = "dataEstreia", length = 12, nullable = false)
     @NotNull
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private LocalDate dataEstreia;
+    private LocalDate dataEstreia = LocalDate.now();
 
     //@Column(name = "categoria", length = 100, nullable = false)
     @NotNull
@@ -63,10 +63,15 @@ public class Livro {
     private Autor autor;
 
 
-    public Livro (String nome, Double preco, LocalDate dataEstreia){
+    public Livro (String nome, String resumo, String sumario, Double preco, Long paginas, String isbn, Autor autor, Categoria categoria){
         this.nome = nome;
+        this.resumo = resumo;
+        this.sumario = sumario;
         this.preco = preco;
-        this.dataEstreia = dataEstreia;
+        this.paginas = paginas;
+        this.isbn = isbn;
+        this.autor = autor;
+        this.categoria = categoria;
     }
 
 }

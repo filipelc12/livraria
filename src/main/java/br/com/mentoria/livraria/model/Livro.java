@@ -1,3 +1,7 @@
+/*
+As validações (annotations) aqui presente são a nível de banco
+ */
+
 package br.com.mentoria.livraria.model;
 
 import lombok.AllArgsConstructor;
@@ -5,9 +9,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
@@ -37,13 +41,15 @@ public class Livro {
 
     @Column(name = "preco", length = 100, nullable = false)
     @NotNull
+    //@Min(value = 20)
     private Double preco;
 
     @Column(name = "paginas", length = 100, nullable = false)
     @NotNull
     private Long paginas;
 
-    @Column(name = "isbn", length = 14, nullable = false)
+    //todo verificar o ponto sobre o banco de ISBN
+    @Column(name = "isbn", nullable = false)
     @NotNull
     private String isbn;
 
@@ -52,13 +58,11 @@ public class Livro {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dataEstreia = LocalDate.now();
 
-    //@Column(name = "categoria", length = 100, nullable = false)
     @NotNull
     @ManyToOne
     private Categoria categoria;
 
-    //@Column(name = "autor", length = 100, nullable = false)
-    @NotNull
+   // @NotNull
     @ManyToOne
     private Autor autor;
 

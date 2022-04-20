@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface VitrineRepository extends JpaRepository<Livro, Long> {
-    List<Livro> findByAutorNome(String nomeAutor);
+public interface LivroRepository extends JpaRepository<Livro, Long> {
+    List<Livro> findByAutorNomeContainsIgnoreCase(String nomeAutor);
 }

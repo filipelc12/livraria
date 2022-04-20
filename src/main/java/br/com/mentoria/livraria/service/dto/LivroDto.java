@@ -1,20 +1,32 @@
-package br.com.mentoria.livraria.controller.dto;
+/*
+Nas classes DTO eu vou colocar as anotações que quero que o sistema valide como notnull e min e max a nível de sistema
+
+ */
+
+package br.com.mentoria.livraria.service.dto;
 
 import br.com.mentoria.livraria.model.Livro;
 import lombok.Getter;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Getter
 public class LivroDto {
 
-    private Long id;
-    private String nome;
-    private String resumo;
-    private Double preco;
-    private String autor;
-    private String dataEstreia;
+    @NotNull
+    private final Long id;
+    @NotEmpty
+    private final String nome;
+    private final String resumo;
+    @Min(20)
+    private final Double preco;
+    @NotNull
+    private final String autor;
+    private final String dataEstreia;
 
     public LivroDto(Livro livro){
         this.id = livro.getId();

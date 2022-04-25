@@ -1,18 +1,17 @@
 package br.com.mentoria.livraria.controller;
 
-import br.com.mentoria.livraria.service.dto.AlterarLivroDto;
-import br.com.mentoria.livraria.service.dto.LivroDto;
-import br.com.mentoria.livraria.service.dto.CriarLivroDto;
 import br.com.mentoria.livraria.model.Livro;
 import br.com.mentoria.livraria.repository.LivroRepository;
 import br.com.mentoria.livraria.service.ILivroService;
+import br.com.mentoria.livraria.service.dto.AlterarLivroDto;
+import br.com.mentoria.livraria.service.dto.CriarLivroDto;
+import br.com.mentoria.livraria.service.dto.LivroDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -25,12 +24,6 @@ public class VitrineController {
 
     @Autowired
     private LivroRepository livroRepository;
-
-//    @Autowired
-//    private AutorRepository autorRepository;
-//
-//    @Autowired
-//    private CategoriaRepository categoriaRepository;
 
     @Autowired
     private ILivroService livroService;
@@ -50,7 +43,7 @@ public class VitrineController {
 
     @RequestMapping(value = "/vitrine", method = RequestMethod.POST)
     @ApiOperation(value = "Metodo POST para livros")
-    public ResponseEntity<LivroDto> cadastrar(@RequestBody @Valid CriarLivroDto form, UriComponentsBuilder uriBuiler){
+    public ResponseEntity<LivroDto> cadastrar(@RequestBody @Valid CriarLivroDto form){//, UriComponentsBuilder uriBuiler
         LivroDto livroDto = livroService.salvarLivro(form);
         return new ResponseEntity(livroDto, HttpStatus.CREATED);
     }

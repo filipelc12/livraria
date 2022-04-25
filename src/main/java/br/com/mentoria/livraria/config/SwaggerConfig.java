@@ -24,7 +24,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("br.com.mentoria.livraria"))
-                .paths(regex("/vitrine.*"))
+                .paths(regex("/.*"))
                 .build();
 
     }

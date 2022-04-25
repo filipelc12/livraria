@@ -4,11 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Length;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -16,7 +13,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class CriarLivroDto {
 
-    @NotNull
+
     private String titulo;
     private String resumo;
     private String sumario;
@@ -25,6 +22,7 @@ public class CriarLivroDto {
     private Long paginas;
     //@Size(min = 13, max =13)
     private String isbn;
+    @NotNull
     private String nomeAutor;
     private String tipoCategoria;
 }

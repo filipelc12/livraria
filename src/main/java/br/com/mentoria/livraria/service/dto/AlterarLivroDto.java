@@ -15,11 +15,9 @@ import javax.validation.constraints.NotNull;
 public class AlterarLivroDto {
 
     private Long id;
-    @NotNull
     private String titulo;
     private String resumo;
     private String sumario;
-    @Min(20)
     private Double preco;
     private String nomeAutor;
     private String tipoCategoria;

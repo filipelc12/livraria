@@ -7,7 +7,6 @@ package br.com.mentoria.livraria.service.dto;
 
 import br.com.mentoria.livraria.model.Livro;
 import lombok.Getter;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
